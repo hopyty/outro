@@ -9,7 +9,7 @@ Sub AlternarPagina(paginaAtiva)
             
             If paginaAtiva = "PaginaDepositos" Then
 
-			CarregarDepositosCadastrados()
+			CarregarDepositosCadastrados
 
             End If
             
@@ -19,8 +19,11 @@ Sub AlternarPagina(paginaAtiva)
 
             End If		
 
-			if paginaAtiva = "PaginaProgramaçao" Then
-
+			if paginaAtiva = "PaginaCorte" Then
+			
+			IniciarcorteCentro
+			IniciarcorteDeposito
+			
 			end if		
 			
         Else

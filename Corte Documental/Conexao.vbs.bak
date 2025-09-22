@@ -1,5 +1,7 @@
 Public Session, conn, rs ,print
 
+print = z5m1
+
 Function Conexao_SAP(ByVal Transacao)
             Dim Connection, SapGui, Appl, WshShell, proc, Session, SapGuiAuto, ApplicationSAP
 

@@ -29,8 +29,8 @@ Sub CarregarEstoqueDepositos()
         End If
 
         ' Botões de ação
-        acaoHTML = "<button class='btn-editar' onclick='CadastrarDeposito(" & rowId & ")'>Incluir no Corte</button>" & _
-                   "<button class='btn-editar' onclick='CadastrarDeposito(" & rowId & ")'>Remover do Corte</button>" & _
+        acaoHTML = "<button class='btn-editar' onclick='Incluir(" & rowId & ")'>Incluir no Corte</button>" & _
+                   "<button class='btn-editar' onclick='Excluir(" & rowId & ")'>Remover do Corte</button>" & _
                    "<button class='btn-editar' onclick='EditarDeposito(" & rowId & ")'>Editar</button>"
 
         relatorioHTML = relatorioHTML & "<tr" & linhaClasse & ">" & _
@@ -98,3 +98,30 @@ Sub AtualizarEstoques()
 	
 End Sub
 
+' Função para "Editar" que limpa Tipo e Processo e atualiza Status
+Sub Incluir(idLinha)
+    ConectarBanco
+
+    sql = "UPDATE Dados SET Status = 'PROGRAMADO' WHERE Código = " & idLinha & ";"
+    conn.Execute sql
+
+    MsgBox "Registro alterado para cadastro!"
+
+    ' Atualizar tabela
+    CarregarDepositosCadastrados
+	CarregarEstoqueDepositos
+End Sub
+
+' Função para "Editar" que limpa Tipo e Processo e atualiza Status
+Sub Excluir(idLinha)
+    ConectarBanco
+
+    sql = "UPDATE Dados SET Status = 'REMOVER' WHERE Código = " & idLinha & ";"
+    conn.Execute sql
+
+    MsgBox "Registro alterado para cadastro!"
+
+    ' Atualizar tabela
+    CarregarDepositosCadastrados
+	CarregarEstoqueDepositos
+End Sub
