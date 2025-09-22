@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Corte Documental</title>
+                
+    <hta:application 
+        id="app"
+        icon="icone.ico"
+		scroll="yes"
+        border="thin"
+        caption="yes"
+        maximizeButton="yes"
+        minimizeButton="yes"
+        sysMenu="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        WINDOWSTATE="maximize"
+    /> 
+
+    <!-- Scripts VBScript -->
+    <script language="vbscript" src="Conexao.VBS"></script>
+	<script language="vbscript" src="Sistema.VBS"></script>
+	<script language="vbscript" src="Depositos.VBS"></script>
+	<script language="vbscript" src="Estoques.VBS"></script>
+	<script language="vbscript" src="Script.VBS"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styless.css">	
+	
+
+</head>
+
+<!-- Página Entradas e Saídas -->
+<div id="PaginaInicial" style="display: Block;">
+
+<H1>PAGINA INICIAL - CORTE DOCUMENTAL</H1>
+
+<table class="layout">
+  <tr>
+    <!-- Coluna 1: Botões -->
+    <td class="col-botoes">
+      <button onclick="AlternarPagina 'PaginaDepositos'">Depositos</button><br>
+      <button onclick="AlternarPagina 'PaginaEstoque'">Estoque</button><br>
+      <button onclick="AlternarPagina 'PaginaProgramaçao'">Programaçao</button><br>
+      <button onclick="AlternarPagina 'PaginaCorte'">Corte</button>
+    </td>
+
+    <!-- Coluna 2: Imagem -->
+    <td class="col-imagem">
+      <img src="PaginaInicial.png" alt="Descrição da imagem">
+    </td>
+  </tr>
+</table>
+
+</div>
+
+
+<!-- Página Entradas e Saídas -->
+<div id="PaginaDepositos" style="display: none;">
+<button onclick="AlternarPagina 'PaginaInicial'">⬅ Voltar pagina inicial</button><br>
+<H1>PAGINA DEPOSITOS - CORTE DOCUMENTAL</H1>
+
+		<div class="tabela-celula">
+            <div id="CarregarDepositosCadastrados"></div>
+        </div>
+
+</div>
+
+<!-- Página Entradas e Saídas -->
+<div id="PaginaEstoque" style="display: none;">
+<button onclick="AlternarPagina 'PaginaInicial'">⬅ Voltar pagina inicial</button>
+<button onclick="AtualizarEstoques">Atualizar Estoques</button><br>
+<H1>PAGINA ESTOQUE - CORTE DOCUMENTAL</H1>
+
+		<div class="tabela-celula">
+            <div id="CarregarEstoqueDepositos"></div>
+        </div>
+
+</div>
+
+<!-- Página Entradas e Saídas -->
+<div id="PaginaProgramaçao" style="display: none;">
+<button onclick="AlternarPagina 'PaginaInicial'">⬅ Voltar pagina inicial</button><br>
+<H1>PAGINA PROGRAMAÇÃO - CORTE DOCUMENTAL</H1>
+
+
+</div>
+
+<!-- Página Entradas e Saídas -->
+<div id="PaginaCorte" style="display: none;">
+<button onclick="AlternarPagina 'PaginaInicial'">⬅ Voltar pagina inicial</button><br>
+<H1>PAGINA CORTE - CORTE DOCUMENTAL</H1>
+
+
+</div>
+	
+	
+</html>

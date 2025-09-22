@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    min-height: 100vh;           /* garante que ocupe pelo menos a tela inteira */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* centraliza horizontalmente */
+    justify-content: flex-start; /* começa do topo, mas pode ajustar */
+    background-color: white;
+    font-family: "Segoe UI", sans-serif;
+    padding: 20px;               /* espaço ao redor do conteúdo */
+}
+
+/* Para limitar a largura e centralizar o conteúdo em "uma página" */
+body > * {
+        /* largura máxima do conteúdo */
+    width: 100%;                 /* ocupa 100% até o limite máximo */
+    margin: 0 auto;              /* centraliza horizontalmente */
+}
+/* Estilo do título principal */
+h1 {
+    text-align: center;      /* centraliza horizontalmente */
+    font-size: 32px;         /* tamanho grande para destaque */
+    font-weight: bold; 
+	background-color: #021f59;	/* negrito */
+    color: white;          /* azul combinando com botões */
+    margin: 2px 2px;          /* espaçamento acima e abaixo */
+    font-family: "Segoe UI", sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* sombra suave */
+}
+/* A tabela ocupa a tela inteira */
+table.layout {
+    width: 100%;       /* largura total */
+    height: 100%;     /* altura fixa menor */
+    border-collapse: collapse;
+    margin: 0 auto;    /* centraliza horizontalmente se necessário */
+}
+
+/* Coluna dos botões */
+.col-botoes {
+    width: 220px;      /* largura fixa */
+    background-color: #021f59;
+    text-align: center;
+    vertical-align: top;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo dos botões */
+.col-botoes button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #00bf44;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.col-botoes button:hover {
+    background-color: #009e46;
+    transform: scale(1.05);
+}
+
+.col-botoes button:active {
+    background-color: #004578;
+    transform: scale(0.95);
+}
+
+/* Coluna da imagem */
+/* Coluna da imagem */
+.col-imagem {
+    padding: 10 px;
+    text-align: center;
+}
+
+/* Ajuste da imagem */
+.col-imagem img {
+    max-width: 100%;
+    max-height: 100%;   /* ocupa a altura disponível da coluna */
+    object-fit: contain;
+    border-radius: 10 px;
+}
+
